@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+	<title>Login Page</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script type="text/javascript">
+		var i=0;
+		function func(){
+			if(i%2){
+				document.getElementById('password').type="password";
+			}
+			else{
+				document.getElementById('password').type="text";
+			}
+			i++;
+		}
+	</script>
+</head>
+<body>
+	<div class="container-fluid main"  style="background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+ background-blend-mode: multiply,multiply;background-size: cover;height: 100vh">
+		<form class="login" method="POST" style="background: rgba(250,250,250,1)">
+			<CENTER><header>LOGIN</header></CENTER>
+			<center>
+				<div style="background-color:#dbdbdb;width: auto;display: flex;align-items: center;margin-top: 20%;	margin-left: auto;
+	margin-right: auto;">
+				<i class="material-icons ml-3">email</i>
+				<input type="text"  class="ml-4" name="username" required autocomplete="off" placeholder="Username..." id="username">
+				</div>
+			</center>
+			<center>
+				<div class="mt-4"style="margin-left: auto;margin-right: auto;background-color:#dbdbdb;width: auto;display: flex;align-items: center;">
+				<button class="io" type="button" onclick="func()"><i class="material-icons ml-3">lock</i></button>
+				<input type="password"  class="ml-4" name="password" required autocomplete="off" placeholder="Password..." id="password">
+				</div>
+			</center>
+			<div class="btn-block mt-4" style="display: flex;justify-content: flex-end">
+				<a href="#">Forgot Password?</a>
+			</div>
+			<center><input type="submit" class="mt-5 btn-block" name="submit"  value="Login" ></center>
+			<div class="row mt-4" style="padding-left: 45%">
+				<center><div class="ml-3"style="border-radius: 50%;">OR</div></center>
+			</div>
+			<a href="/register"><button type="button" class="mt-4 register btn-block" id="Register">Register</button></a>
+            {% csrf_token %}
+		</form>
+	</div>
+</body>
+</html>

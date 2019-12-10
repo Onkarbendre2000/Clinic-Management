@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<head>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript">
+        function func() {
+            document.getElementById('focus').click();
+        }
+    </script>
+</head>
+
+<body onload="func()" style="background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+ background-blend-mode: multiply,multiply;">
+    <nav class="navbar navbar-light navbar-expand-sm bg-dark" style="height: 7vh;">
+        <a class="nav-brand" href="#">
+            <img src="{% static 'images/tt.png' %}" style="height: 4vh;background: transparent">
+        </a>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <button type="button" class="btn btn-primary">Dashboard</button>
+            </li>
+            <li class="nav-item ml-3">
+                <a href="{% url 'userprof' %}" class="btn btn-primary">Edit Profile</a>
+            </li>
+            <li class="nav-item ml-3">
+                <a href="{% url 'index' %}" ><button type="button" class="btn btn-danger">Logout</button></a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container-fluid main">
+        <div class="row" style="height:100%;display:flex;align-items: center;padding-right: 0.2%;width: 100%">
+            <div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 sidebar">
+                <div class="row mt-2" style="height:5%">
+                    <div class="link1 col-lg-12" style="border: none;border-bottom:0.5px solid black;height: 100%;">
+                        <a href="{% url 'search' %}" target="content" ><button class="link" type="button" id="focus">
+                                Search Prescription
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="row" style="height:5%">
+                    <div class="link1 col-lg-12" style="border: none;border-bottom:0.5px solid black;height: 100%;">
+                         <a href="{% url 'addpre' %}" target="content"><button class="link" type="button">
+                                Add Presciption
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="row" style="height:5%">
+                    <div class="link1 col-lg-12" style="border: none;border-bottom:0.5px solid black;height: 100%;">
+                        <a href="{% url 'add' %}" target="content"><button class="link" type="button">
+                                Add Patient
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="row" style="height:5%">
+                    <div class="link1 col-lg-12" style="border: none;border-bottom:0.5px solid black;height: 100%;">
+                         <a href="{% url 'view' %}" target="content"><button class="link" type="button">
+                                View Patient
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="row" style="height:5%">
+                    <div class="link1 col-lg-12" style="border: none;border-bottom:0.5px solid black;height: 100%;">
+                    </div>
+                </div>
+                <div class="row" style="height:5%">
+                    <div class="link1 col-lg-12" style="border: none;border-bottom:0.5px solid black;height: 100%;">
+                    </div>
+                </div>
+
+            </div>
+            <iframe class="col-lg-10 col-sm-10 col-xs-10 col-md-10" id="#content" name="content"style="border:none;height:100%">
+            </iframe>
+        </div>
+    </div>
+
+</body>
+</html>

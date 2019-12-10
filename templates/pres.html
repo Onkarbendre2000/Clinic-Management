@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+  <title>Patient Profile</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body style="width: 100%;background:transparent;">
+
+<form method="post" class="container-fluid" style="width: 100%;justify-content: center;display: flex;margin-top: 10%">
+ <div class="card" style="width:300px;">
+  <div class="card-body">
+      {% for i in data %}
+    <h4 class="card-title">{{ i.name }}</h4>
+    <p class="card-text">Mobile: {{ i.mobile }}</p>
+          <p class="card-text">Date: {{ i.date }}</p>
+          <p class="card-text">Disease: {{ i.dis }}</p>
+          <p class="card-text">Medicine: {{ i.med }}</p>
+      {% endfor %}
+  </div>
+</div>
+  <br>
+{% csrf_token %}
+</form>
+</body>
+</html>
